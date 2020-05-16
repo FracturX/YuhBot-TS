@@ -11,11 +11,10 @@ module.exports = class JoinCommand extends BaseCommand {
 
     async run(client : Client, message : Message, cmdArgs : Array<string>) {
 
-      console.log(message.member)
         if (message.member) {
 
           const channel = message.member.voice.channel
-          console.log(message.member.voice)
+
           if (channel) {
             const player = client.music.players.spawn({
                 guild: message.guild,
