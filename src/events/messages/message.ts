@@ -9,13 +9,11 @@ module.exports = class MessageEvent extends BaseEvent {
     }
 
     async run(client: client, message: Message) {
-        console.log("nice")
 
         console.log(message.content)
 
         const prefix = '?'
         const usedprefix = message.content.slice(0, prefix.length)
-        console.log('message was sent...')
 
 
         if (prefix === usedprefix) {
