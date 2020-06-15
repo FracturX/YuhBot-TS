@@ -15,11 +15,14 @@ module.exports =
         const channel = message.member?.voice.channel;
             if (player && channel) {
               if (player.voiceChannel.id === channel.id) {
-                if (player.trackRepeat === true) 
+                if (player.trackRepeat === true) {
                   player.setQueueRepeat(false)
-                else if (player.trackRepeat === false) 
+                  message.channel.send("Queue has been unlooped.")
+                }
+                else if (player.trackRepeat === false) {
                   player.setQueueRepeat(true)
-                
+                  message.channel.send("Queue has been looped.")
+                }
               }
             }
                 

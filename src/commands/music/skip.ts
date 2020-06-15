@@ -21,6 +21,9 @@ module.exports = class SkipCommand extends BaseCommand {
             const channel = message.member?.voice.channel;
             if (player && channel) {
                 if (player.voiceChannel.id === channel.id) {
+                  if (player.trackRepeat === true) {
+                    player.setTrackRepeat(false)
+                  }
                     player?.pause(false)
                         player.stop();
                         message.channel.send(
